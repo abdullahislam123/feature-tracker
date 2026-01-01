@@ -27,7 +27,7 @@ export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(
         vscode.commands.registerCommand('feature-tracker.deleteFeature', async (item: FeatureItem) => {
             const confirm = await vscode.window.showWarningMessage(
-                `Kya aap '${item.label}' ko delete karna chahte hain?`, 
+                `Do you want to delete this entry '${item.label}' from the list permanently?`, 
                 { modal: true }, 
                 'Yes'
             );
