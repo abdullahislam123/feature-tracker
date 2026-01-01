@@ -4,6 +4,10 @@
   "description": "Tracks my project features",
   "version": "0.0.1",
   "publisher": "Abdullah",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abdullahislam123/feature-tracker"
+  },
   "engines": {
     "vscode": "^1.90.0"
   },
