@@ -1,0 +1,97 @@
+{
+  "name": "feature-tracker",
+  "displayName": "FeatureTracker",
+  "description": "Tracks my project features",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "feature-tracker-sidebar",
+          "title": "My Features",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "feature-tracker-sidebar": [
+        {
+          "id": "featureList",
+          "name": "Features Implemented",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "commands": [
+  {
+    "command": "feature-tracker.addFeature",
+    "title": "Add New Feature",
+    "icon": "$(add)"
+  },
+  {
+    "command": "feature-tracker.editFeature",
+    "title": "Edit Feature",
+    "icon": "$(edit)"
+  },
+  {
+    "command": "feature-tracker.deleteFeature",
+    "title": "Delete Feature",
+    "icon": "$(trash)"
+  }
+],
+"menus": {
+  "view/title": [
+    {
+      "command": "feature-tracker.addFeature",
+      "when": "view == featureList",
+      "group": "navigation"
+    }
+  ],
+  "view/item/context": [
+    {
+      "command": "feature-tracker.editFeature",
+      "when": "view == featureList",
+      "group": "inline"
+    },
+    {
+      "command": "feature-tracker.deleteFeature",
+      "when": "view == featureList",
+      "group": "inline"
+    }
+  ]
+}
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.90.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^7.7.1",
+    "@typescript-eslint/parser": "^7.7.1",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5",
+    "ts-loader": "^9.5.1",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "@vscode/test-cli": "^0.0.8",
+    "@vscode/test-electron": "^2.3.9"
+  }
+}
