@@ -3,6 +3,7 @@
   "displayName": "FeatureTracker",
   "description": "Tracks my project features",
   "version": "0.0.1",
+  "publisher": "Abdullah",
   "engines": {
     "vscode": "^1.90.0"
   },
